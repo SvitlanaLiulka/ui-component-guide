@@ -1,16 +1,19 @@
 import React, { useRef, useState } from 'react';
 import { Button, Overlay as OverlayComponent, Tooltip } from '@paysera/react-common';
 import { getComponentPropType } from '../utils/getComponentPropType';
-import { ANIMATION_TYPE, PLACEMENT_TYPE } from './const';
-import '../styles/storybook.css';
+import { ANIMATION_TYPE, CLOSE_EVENT_TYPE, PLACEMENT_TYPE } from './const';
 
 export default {
-    title: 'Overlay',
+    title: 'Popover Components/Overlay',
     component: OverlayComponent,
     args: {
-        placement: 'top',
     },
     argTypes: {
+        placement: {
+            options: PLACEMENT_TYPE,
+            control: { type: 'radio' },
+            ...getComponentPropType(PLACEMENT_TYPE),
+        },
         show: {
             control: 'boolean',
             ...getComponentPropType('boolean', false),
@@ -19,12 +22,16 @@ export default {
             control: 'boolean',
             ...getComponentPropType('boolean'),
         },
-        onHide: {
-            ...getComponentPropType('function'),
+        rootCloseEvent: {
+            control: CLOSE_EVENT_TYPE,
+            ...getComponentPropType(CLOSE_EVENT_TYPE),
         },
         animation: {
             control: ANIMATION_TYPE,
             ...getComponentPropType(ANIMATION_TYPE),
+        },
+        onHide: {
+            ...getComponentPropType('function'),
         },
         onEnter: {
             ...getComponentPropType('function'),
@@ -44,10 +51,8 @@ export default {
         onExited: {
             ...getComponentPropType('function'),
         },
-        placement: {
-            options: PLACEMENT_TYPE,
-            control: { type: 'radio' },
-            ...getComponentPropType(PLACEMENT_TYPE),
+        popperConfig: {
+            ...getComponentPropType('object'),
         },
     },
 };
