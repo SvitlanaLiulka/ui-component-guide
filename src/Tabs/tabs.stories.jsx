@@ -2,15 +2,13 @@ import React from 'react';
 import { Tab, Tabs as TabsComponent } from '@paysera/react-common';
 import { CHILDREN_TYPE } from '../const';
 import { getComponentPropType } from '../utils/getComponentPropType';
-import { TABS_ID_OPTIONS, TABS_STYLE_OPTIONS } from './const/const';
+import { ANIMATION_TYPE, TABS_ID_OPTIONS, TABS_STYLE_OPTIONS } from './const/const';
 
 export default {
     title: 'Tabs Components/Tabs',
     component: TabsComponent,
     args: {
-        defaultActiveKey: 1,
-        bsStyle: 'tabs',
-        animation: true,
+        variant: 'pills',
     },
     argTypes: {
         defaultActiveKey: {
@@ -21,22 +19,26 @@ export default {
             control: 'number',
             ...getComponentPropType('number'),
         },
-        bsStyle: {
+        variant: {
             options: TABS_STYLE_OPTIONS,
-            ...getComponentPropType(TABS_STYLE_OPTIONS, 'tabs'),
+            ...getComponentPropType(TABS_STYLE_OPTIONS, 'pills'),
             control: { type: 'radio' },
-        },
-        animation: {
-            control: 'boolean',
-            ...getComponentPropType('boolean', true),
         },
         mountOnEnter: {
             control: 'boolean',
-            ...getComponentPropType('boolean', false),
+            ...getComponentPropType('boolean'),
+        },
+        justify: {
+            control: 'boolean',
+            ...getComponentPropType('boolean'),
+        },
+        fill: {
+            control: 'boolean',
+            ...getComponentPropType('boolean'),
         },
         unmountOnExit: {
             control: 'boolean',
-            ...getComponentPropType('boolean', false),
+            ...getComponentPropType('boolean'),
         },
         id: {
             ...getComponentPropType(TABS_ID_OPTIONS),
@@ -47,6 +49,10 @@ export default {
         children: {
             control: CHILDREN_TYPE,
             ...getComponentPropType(CHILDREN_TYPE),
+        },
+        transition: {
+            control: ANIMATION_TYPE,
+            ...getComponentPropType(ANIMATION_TYPE, true),
         },
     },
 };
@@ -67,5 +73,3 @@ const Template = args => (
 );
 
 export const Tabs = Template.bind({});
-
-TabsComponent.displayName = 'Tabs';
