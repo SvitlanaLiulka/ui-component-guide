@@ -1,7 +1,7 @@
 import React from 'react';
 import { Col as ColComponent, Row } from '@paysera/react-common';
 import { getComponentPropType } from '../../utils/getComponentPropType';
-import '../../styles/storybook.css';
+import { LAYOUT_TYPE } from '../const';
 
 export default {
     title: 'Layout/Col',
@@ -11,93 +11,37 @@ export default {
         md: 8,
     },
     argTypes: {
-        bsClass: {
-            control: 'text',
-            ...getComponentPropType('string'),
-        },
-        componentClass: {
-            control: 'ReactNode',
-            ...getComponentPropType('ReactNode'),
-        },
-        xs: {
-            control: 'number',
-            ...getComponentPropType('number'),
-        },
-        sm: {
-            control: 'number',
-            ...getComponentPropType('number'),
-        },
-        md: {
-            control: 'number',
-            ...getComponentPropType('number'),
+        as: {
+            ...getComponentPropType('elementType'),
         },
         lg: {
-            control: 'number',
-            ...getComponentPropType('number'),
+            control: LAYOUT_TYPE,
+            ...getComponentPropType(LAYOUT_TYPE),
         },
-        xsHidden: {
-            control: 'boolean',
-            ...getComponentPropType('boolean'),
+        md: {
+            control: 'text',
+            ...getComponentPropType(LAYOUT_TYPE, 8),
         },
-        smHidden: {
-            control: 'boolean',
-            ...getComponentPropType('boolean'),
+        sm: {
+            control: 'text',
+            ...getComponentPropType(LAYOUT_TYPE),
         },
-        mdHidden: {
-            control: 'boolean',
-            ...getComponentPropType('boolean'),
+        xl: {
+            control: 'text',
+            ...getComponentPropType(LAYOUT_TYPE),
         },
-        lgHidden: {
-            control: 'boolean',
-            ...getComponentPropType('boolean'),
+        xs: {
+            control: 'text',
+            ...getComponentPropType(LAYOUT_TYPE, 12),
         },
-        xsOffset: {
-            control: 'number',
-            ...getComponentPropType('number'),
+        xxl: {
+            control: 'text',
+            ...getComponentPropType(LAYOUT_TYPE),
         },
-        smOffset: {
-            control: 'number',
-            ...getComponentPropType('number'),
-        },
-        mdOffset: {
-            control: 'number',
-            ...getComponentPropType('number'),
-        },
-        lgOffset: {
-            control: 'number',
-            ...getComponentPropType('number'),
-        },
-        xsPush: {
-            control: 'number',
-            ...getComponentPropType('number'),
-        },
-        smPush: {
-            control: 'number',
-            ...getComponentPropType('number'),
-        },
-        mdPush: {
-            control: 'number',
-            ...getComponentPropType('number'),
-        },
-        lgPush: {
-            control: 'number',
-            ...getComponentPropType('number'),
-        },
-        xsPull: {
-            control: 'number',
-            ...getComponentPropType('number'),
-        },
-        smPull: {
-            control: 'number',
-            ...getComponentPropType('number'),
-        },
-        mdPull: {
-            control: 'number',
-            ...getComponentPropType('number'),
-        },
-        lgPull: {
-            control: 'number',
-            ...getComponentPropType('number'),
+        bsPrefix: {
+            control: 'text',
+            options: 'row | col',
+            ...getComponentPropType('row | col'),
         },
     },
 };
@@ -106,14 +50,10 @@ const Template = args => (
     <>
         <Row>
             <ColComponent {...args}>
-                <code>
-                    {'<Col xs={12} md={8}/>'}
-                </code>
+                xs=12 md=8
             </ColComponent>
             <ColComponent {...args}>
-                <code>
-                    {'<Col xs={12} md={8}/>'}
-                </code>
+                xs=12 md=8
             </ColComponent>
         </Row>
     </>
