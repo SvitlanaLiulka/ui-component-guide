@@ -4,15 +4,17 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "@paysera/react-common": "^3.17.3",
+    "@paysera/react-common": "git+https://gitlab.paysera.net/paysera/js-lib-react-common.git#feature/SUPPORT-61721-modernize-react-bootstrap",
     "@storybook/addon-essentials": "^6.5.14",
-    "bootstrap": "^3.4.1",
+    "@storybook/builder-webpack5": "^6.5.15",
+    "@storybook/manager-webpack5": "^6.5.15",
+    "bootstrap": "^5.2.0",
     "coa": "2.0.2",
     "font-awesome": "^4.7.0",
     "html-webpack-plugin": "^5.5.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
-    "react-bootstrap": "^0.33.1",
+    "react-bootstrap": "^2.7.0",
     "react-dom": "^16.13.1",
     "react-redux": "5.1.1",
     "react-table": "^6.9.2",
@@ -38,6 +40,7 @@
     "less": "^3.12.2",
     "less-loader": "^6.2.0",
     "modernizr": "^3.11.4",
+    "webpack": "^5.75.0",
     "webpack-modernizr-loader": "^5.0.0"
   },
   "scripts": {
