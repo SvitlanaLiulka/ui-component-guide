@@ -11,27 +11,27 @@ export default {
             ...getComponentPropType('elementType'),
         },
         lg: {
-            control: 'text',
+            control: 'number',
             ...getComponentPropType(LAYOUT_TYPE),
         },
         md: {
-            control: 'text',
+            control: 'number',
             ...getComponentPropType(LAYOUT_TYPE),
         },
         sm: {
-            control: 'text',
+            control: 'number',
             ...getComponentPropType(LAYOUT_TYPE),
         },
         xl: {
-            control: 'text',
+            control: 'number',
             ...getComponentPropType(LAYOUT_TYPE),
         },
         xs: {
-            control: 'text',
+            control: 'number',
             ...getComponentPropType(LAYOUT_TYPE),
         },
         xxl: {
-            control: 'text',
+            control: 'number',
             ...getComponentPropType(LAYOUT_TYPE),
         },
         bsPrefix: {
