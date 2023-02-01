@@ -1,7 +1,7 @@
 import React from 'react';
 import { Col as ColComponent, Row } from '@paysera/react-common';
 import { getComponentPropType } from '../../utils/getComponentPropType';
-import '../../styles/storybook.css';
+import { LAYOUT_TYPE } from '../const';
 
 export default {
     title: 'Layout/Col',
@@ -11,93 +11,37 @@ export default {
         md: 8,
     },
     argTypes: {
-        bsClass: {
-            control: 'text',
-            ...getComponentPropType('string'),
-        },
-        componentClass: {
-            control: 'ReactNode',
-            ...getComponentPropType('ReactNode'),
-        },
-        xs: {
-            control: 'number',
-            ...getComponentPropType('number'),
-        },
-        sm: {
-            control: 'number',
-            ...getComponentPropType('number'),
-        },
-        md: {
-            control: 'number',
-            ...getComponentPropType('number'),
+        as: {
+            ...getComponentPropType('elementType'),
         },
         lg: {
             control: 'number',
-            ...getComponentPropType('number'),
+            ...getComponentPropType(LAYOUT_TYPE),
         },
-        xsHidden: {
-            control: 'boolean',
-            ...getComponentPropType('boolean'),
-        },
-        smHidden: {
-            control: 'boolean',
-            ...getComponentPropType('boolean'),
-        },
-        mdHidden: {
-            control: 'boolean',
-            ...getComponentPropType('boolean'),
-        },
-        lgHidden: {
-            control: 'boolean',
-            ...getComponentPropType('boolean'),
-        },
-        xsOffset: {
+        md: {
             control: 'number',
-            ...getComponentPropType('number'),
+            ...getComponentPropType(LAYOUT_TYPE, 8),
         },
-        smOffset: {
+        sm: {
             control: 'number',
-            ...getComponentPropType('number'),
+            ...getComponentPropType(LAYOUT_TYPE),
         },
-        mdOffset: {
+        xl: {
             control: 'number',
-            ...getComponentPropType('number'),
+            ...getComponentPropType(LAYOUT_TYPE),
         },
-        lgOffset: {
+        xs: {
             control: 'number',
-            ...getComponentPropType('number'),
+            ...getComponentPropType(LAYOUT_TYPE, 12),
         },
-        xsPush: {
+        xxl: {
             control: 'number',
-            ...getComponentPropType('number'),
+            ...getComponentPropType(LAYOUT_TYPE),
         },
-        smPush: {
-            control: 'number',
-            ...getComponentPropType('number'),
-        },
-        mdPush: {
-            control: 'number',
-            ...getComponentPropType('number'),
-        },
-        lgPush: {
-            control: 'number',
-            ...getComponentPropType('number'),
-        },
-        xsPull: {
-            control: 'number',
-            ...getComponentPropType('number'),
-        },
-        smPull: {
-            control: 'number',
-            ...getComponentPropType('number'),
-        },
-        mdPull: {
-            control: 'number',
-            ...getComponentPropType('number'),
-        },
-        lgPull: {
-            control: 'number',
-            ...getComponentPropType('number'),
+        bsPrefix: {
+            control: 'text',
+            options: 'row | col',
+            ...getComponentPropType('row | col'),
         },
     },
 };
@@ -106,14 +50,10 @@ const Template = args => (
     <>
         <Row>
             <ColComponent {...args}>
-                <code>
-                    {'<Col xs={12} md={8}/>'}
-                </code>
+                xs=12 md=8
             </ColComponent>
             <ColComponent {...args}>
-                <code>
-                    {'<Col xs={12} md={8}/>'}
-                </code>
+                xs=12 md=8
             </ColComponent>
         </Row>
     </>
