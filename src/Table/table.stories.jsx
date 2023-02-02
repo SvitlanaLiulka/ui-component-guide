@@ -1,10 +1,14 @@
 import React from 'react';
 import { Table as TableComponent } from '@paysera/react-common';
 import { getComponentPropType } from '../utils/getComponentPropType';
+import { TABLE_RESPONSIVE, TABLE_VARIANT } from './const';
 
 export default {
     title: 'Tables/Table',
-    component: Table,
+    component: TableComponent,
+    args: {
+
+    },
     argTypes: {
         striped: {
             control: 'boolean',
@@ -14,7 +18,7 @@ export default {
             control: 'boolean',
             ...getComponentPropType('boolean', false),
         },
-        condensed: {
+        borderless: {
             control: 'boolean',
             ...getComponentPropType('boolean', false),
         },
@@ -23,12 +27,22 @@ export default {
             ...getComponentPropType('boolean', false),
         },
         responsive: {
-            control: 'boolean',
-            ...getComponentPropType('boolean', false),
+            control: { type: 'select' },
+            options: TABLE_RESPONSIVE,
+            ...getComponentPropType(TABLE_RESPONSIVE, false),
         },
-        bsClass: {
+        bsPrefix: {
             control: 'text',
-            ...getComponentPropType('string'),
+            ...getComponentPropType('string', 'table'),
+        },
+        size: {
+            control: '',
+            ...getComponentPropType('string', 'sm'),
+        },
+        variant: {
+            control: { type: 'select' },
+            options: TABLE_VARIANT,
+            ...getComponentPropType(TABLE_VARIANT),
         },
     },
 };
@@ -66,3 +80,4 @@ const Template = args => (
 );
 
 export const Table = Template.bind({});
+TableComponent.displayName = 'Table';
