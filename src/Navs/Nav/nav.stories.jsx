@@ -1,16 +1,18 @@
 import React from 'react';
-import { Nav as NavComponent, NavItem } from '@paysera/react-common';
+import { Nav as NavComponent, NavItem, NavLink } from '@paysera/react-common';
 import { getComponentPropType } from '../../utils/getComponentPropType';
-import NAV_STYLE_OPTIONS from './const';
+import { NAV_STYLE_OPTIONS , NAV_ALIGN_OPTIONS } from './const';
 
 export default {
     title: 'Navs/Nav',
     component: NavComponent,
     args: {
-        bsStyle: 'tabs',
+        variant: 'tabs',
+        className: '',
+        bsPrefix: 'nav',
     },
     argTypes: {
-        bsStyle: {
+        variant: {
             options: NAV_STYLE_OPTIONS,
             ...getComponentPropType(NAV_STYLE_OPTIONS, 'tabs'),
             control: { type: 'radio' },
@@ -19,33 +21,33 @@ export default {
             control: 'number',
             ...getComponentPropType('number'),
         },
-        pullRight: {
-            control: 'boolean',
-            ...getComponentPropType('boolean'),
+        className: {
+            name: 'alignment and orientation',
+            type: { name: 'string', required: false },
+            description: 'controled by className',
+            options: NAV_ALIGN_OPTIONS,
+            ...getComponentPropType(NAV_ALIGN_OPTIONS, NAV_ALIGN_OPTIONS[0]),
+            control: {
+                type: 'radio',
+                labels: {
+                    [NAV_ALIGN_OPTIONS[0]]: 'None (default)',
+                    [NAV_ALIGN_OPTIONS[1]]: 'Center',
+                    [NAV_ALIGN_OPTIONS[2]]: 'Right',
+                    [NAV_ALIGN_OPTIONS[3]]: 'Verical',
+                },
+            },
         },
-        pullLeft: {
-            control: 'boolean',
-            ...getComponentPropType('boolean'),
-        },
-        stacked: {
+        justify: {
             control: 'boolean',
             ...getComponentPropType('boolean', false),
         },
-        justified: {
+        fill: {
             control: 'boolean',
             ...getComponentPropType('boolean', false),
         },
         navbar: {
             control: 'boolean',
             ...getComponentPropType('boolean'),
-        },
-        bsClass: {
-            control: 'text',
-            ...getComponentPropType('string'),
-        },
-        activeHref: {
-            control: 'text',
-            ...getComponentPropType('string'),
         },
         role: {
             control: 'text',
@@ -54,19 +56,29 @@ export default {
         onSelect: {
             ...getComponentPropType('function'),
         },
+        bsPrefix: {
+            control: 'text',
+            ...getComponentPropType('string', 'nav'),
+        },
     },
 };
 
 const Template = args => (
     <NavComponent {...args}>
-        <NavItem eventKey={1} href="/home">
-            NavItem 1 content
+        <NavItem>
+            <NavLink eventKey={1} title="Item" href="/home">
+                NavItem 1 content
+            </NavLink>
         </NavItem>
-        <NavItem eventKey={2} title="Item">
-            NavItem 2 content
+        <NavItem>
+            <NavLink eventKey={2} title="Item">
+                NavItem 2 content
+            </NavLink>
         </NavItem>
-        <NavItem eventKey={3} disabled>
-            NavItem 3 content
+        <NavItem>
+            <NavLink eventKey={3} disabled>
+                NavItem 3 content
+            </NavLink>
         </NavItem>
     </NavComponent>
 );
