@@ -1,7 +1,7 @@
 import React from 'react';
 import { ListGroup as ListGroupComponent } from 'react-bootstrap';
 import { getComponentPropType } from '../utils/getComponentPropType';
-import { LIST_HORIZONTAL } from './const';
+import { LIST_AS, LIST_HORIZONTAL } from './const';
 
 export default {
     title: 'ListGroup/ListGroup',
@@ -17,8 +17,9 @@ export default {
             ...getComponentPropType(LIST_HORIZONTAL),
         },
         as: {
-            control: 'elementType',
-            ...getComponentPropType('elementType'),
+            control: { type: 'select' },
+            options: LIST_AS,
+            ...getComponentPropType(LIST_AS),
         },
         numbered: {
             control: 'boolean',
