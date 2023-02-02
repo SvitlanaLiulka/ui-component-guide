@@ -29,3 +29,7 @@ section.info-section {
 .row {
     margin-bottom: 15px;
 }
+
+.fade {
+    opacity: unset;
+}
