@@ -14,7 +14,7 @@ export default {
         as: {
             control: { type: 'select' },
             options: BREADCRUMB_AS,
-            ...getComponentPropType(BREADCRUMB_AS),
+            ...getComponentPropType('You can use a custom element type for this component', 'li'),
         },
         href: {
             control: 'text',
@@ -26,15 +26,15 @@ export default {
             ...getComponentPropType(BREADCRUMB_AS, 'Anchor'),
         },
         linkProps: {
-            ...getComponentPropType('object'),
+            ...getComponentPropType('Additional props passed as-is to the underlying link for non-active items', 'object'),
         },
         target: {
             control: 'text',
-            ...getComponentPropType('string'),
+            ...getComponentPropType('target attribute for the inner a element', 'string'),
         },
         title: {
             control: 'ReactNode',
-            ...getComponentPropType('ReactNode'),
+            ...getComponentPropType('You can use a custom element type for this component', 'Home'),
         },
         bsPrefix: {
             control: 'text',
