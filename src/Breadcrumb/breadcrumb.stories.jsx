@@ -26,11 +26,11 @@ export default {
             ...getComponentPropType(BREADCRUMB_AS, 'Anchor'),
         },
         linkProps: {
-            ...getComponentPropType('Additional props passed as-is to the underlying link for non-active items', 'object'),
+            ...getComponentPropType('React.ElementType', '{}'),
         },
         target: {
             control: 'text',
-            ...getComponentPropType('target attribute for the inner a element', 'string'),
+            ...getComponentPropType('string'),
         },
         title: {
             control: 'ReactNode',
