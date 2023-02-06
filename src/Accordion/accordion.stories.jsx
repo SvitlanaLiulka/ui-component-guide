@@ -1,7 +1,7 @@
 import React from 'react';
 import { Accordion as AccordionComponent } from '@paysera/react-common';
 import { getComponentPropType } from '../utils/getComponentPropType';
-import { ACCORDION_KEYS } from './const';
+import { ACCORDION_AS, ACCORDION_KEYS } from './const';
 
 export default {
     title: 'Accordion',
@@ -20,19 +20,20 @@ export default {
         },
         alwaysOpen: {
             control: 'boolean',
-            ...getComponentPropType('boolean'),
+            ...getComponentPropType('Allow accordion items to stay open when another item is opened'),
         },
         as: {
-            control: 'elementType',
-            ...getComponentPropType('elementType'),
+            control: { type: 'select' },
+            options: ACCORDION_AS,
+            ...getComponentPropType('Set a custom element for this component', 'h2'),
         },
         flush: {
             control: 'boolean',
-            ...getComponentPropType('boolean'),
+            ...getComponentPropType('Renders accordion edge-to-edge with its parent container'),
         },
         bsPrefix: {
             control: 'text',
-            ...getComponentPropType('string'),
+            ...getComponentPropType('string', 'accordion'),
         },
         onSelect: {
             ...getComponentPropType('function'),
