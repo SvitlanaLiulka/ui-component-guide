@@ -16,17 +16,5 @@ export const argTypes = {
     },
     style: {
         ...getComponentPropType('object', {}),
-    }
-}
-
-export const args = {
-    className: 'bi-alarm',
-    style: { 
-        fontSize: '2rem', 
-        color: 'cornflowerblue',
-     },
-}
-
-// const Template = args => <i {...args} />;
-
-// export const Icons = Template.bind({});
+    },
+};
