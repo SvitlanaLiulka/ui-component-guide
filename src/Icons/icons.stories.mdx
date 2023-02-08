@@ -1,21 +1,8 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 
-<Meta title="Icons" component={<i />} />
+<Meta title="Icon" component={<i />} />
 
 export const Template = (args) => <i {...args} />;
-
-<Story
-  name="Icons"
-  args={{
-    className: "bi-alarm",
-    style: {
-      fontSize: "2rem",
-      color: "cornflowerblue",
-    },
-  }}
->
-  {Template.bind({})}
-</Story>
 
 ## Icon Props
 
@@ -26,16 +13,25 @@ Icons can be used using `i` tag. See the examples.
 | className | text            |         | accepts the class of expected icon. For full list of icons visit [docs](https://icons.getbootstrap.com/#icons) |
 | style     | `CSSProperties` |         | list of css properties as object                                                                               |
 
-## Code Example
-
-```jsx
-<i className="bi-alarm" />
-
-<i 
-    className="bi-alarm" 
-    style={{
-        fontSize: '2rem',
-        color: 'cornflowerblue',
-    }} 
-/>
-```
+<Canvas withSource withToolbar>
+    <Story
+        name="Example (without styling)"
+        args={{
+            className: "bi-alarm",
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+    <Story
+        name="Example (with styling)"
+        args={{
+            className: "bi-alarm",
+            style: {
+                fontSize: "2rem",
+                color: "cornflowerblue",
+            },
+        }}
+    >
+        {Template.bind({})}
+    </Story>    
+</Canvas>
