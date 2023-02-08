@@ -2,38 +2,30 @@ import React from 'react';
 import { Pagination as PaginationComponent } from '@paysera/react-common';
 import { getComponentPropType } from '../utils/getComponentPropType';
 
+PaginationComponent.displayName = 'Pagination';
+
 export default {
-    title: 'Pagination',
+    title: 'Pagination/Pagination',
     component: PaginationComponent,
-    args: {
-        pages: 6,
-        page: 4,
-        previousBtnText: 'prev',
-        nextBtnText: 'next',
-    },
     argTypes: {
-        pages: {
+        totalDataCount: {
             control: 'number',
-            ...getComponentPropType('number', 6),
+            ...getComponentPropType('number'),
         },
-        page: {
+        countForPage: {
             control: 'number',
-            ...getComponentPropType('number', 4),
+            ...getComponentPropType('number'),
         },
-        previousBtnText: {
-            control: 'text',
-            ...getComponentPropType('string', 'prev'),
+        currentPage: {
+            control: 'number',
+            ...getComponentPropType('number'),
         },
-        nextBtnText: {
-            control: 'text',
-            ...getComponentPropType('string', 'prev'),
+        visiblePageOptions: {
+            control: 'number',
+            ...getComponentPropType('number'),
         },
         onPageChange: {
             ...getComponentPropType('function'),
-        },
-        triggerOnPropChange: {
-            control: 'boolean',
-            ...getComponentPropType('boolean'),
         },
     },
 };
@@ -41,3 +33,11 @@ export default {
 const Template = args => <PaginationComponent {...args} />;
 
 export const Pagination = Template.bind({});
+
+Pagination.args = {
+    onPageChange: () => true,
+    totalDataCount: 60,
+    countForPage: 5,
+    currentPage: 7,
+    visiblePageOptions: 9,
+};
