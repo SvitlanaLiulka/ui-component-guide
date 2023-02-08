@@ -6,6 +6,7 @@ import '../src/styles/theme.css';
 import '../src/styles/storybook.css';
 import 'font-awesome/css/font-awesome.css';
 import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 export const parameters = {
     docs: {

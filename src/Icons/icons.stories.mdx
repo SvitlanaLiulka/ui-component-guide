@@ -1,0 +1,22 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import * as stories from './icons.stories.jsx';
+import ExampleIcons from './examples/Icons.jsx';
+
+<Meta
+    title='Icons'
+    component={<i />}
+    argTypes={{ ...stories.argTypes }}
+    args={{ ...stories.args }}
+/>
+
+## Icons Examples
+
+<ExampleCodeBlock code={ExampleIcons} />
+
+## Icon Props
+Icons can be used using `i` tag. See the examples.
+
+| Name                   | Type             | default   | Description              |
+| ------------           | ---------------  | -------   | -----------------------  |
+| className              | text             |           | accepts the class of expected icon. For full list of icons visit [docs](https://icons.getbootstrap.com/#icons)
+| style                  | `CSSProperties`  |           | list of css properties as object

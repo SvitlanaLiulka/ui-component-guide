@@ -9,6 +9,7 @@
     "@storybook/builder-webpack5": "^6.5.15",
     "@storybook/manager-webpack5": "^6.5.15",
     "bootstrap": "^5.2.0",
+    "bootstrap-icons": "^1.10.3",
     "coa": "2.0.2",
     "font-awesome": "^4.7.0",
     "html-webpack-plugin": "^5.5.0",
