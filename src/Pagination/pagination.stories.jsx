@@ -7,6 +7,12 @@ PaginationComponent.displayName = 'Pagination';
 export default {
     title: 'Pagination/Pagination',
     component: PaginationComponent,
+    args: {
+        onPageChange: () => true,
+        totalDataCount: 60,
+        countForPage: 5,
+        currentPage: 7,
+    },
     argTypes: {
         totalDataCount: {
             control: 'number',
@@ -20,10 +26,6 @@ export default {
             control: 'number',
             ...getComponentPropType('number'),
         },
-        visiblePageOptions: {
-            control: 'number',
-            ...getComponentPropType('number'),
-        },
         onPageChange: {
             ...getComponentPropType('function'),
         },
@@ -33,11 +35,3 @@ export default {
 const Template = args => <PaginationComponent {...args} />;
 
 export const Pagination = Template.bind({});
-
-Pagination.args = {
-    onPageChange: () => true,
-    totalDataCount: 60,
-    countForPage: 5,
-    currentPage: 7,
-    visiblePageOptions: 9,
-};
