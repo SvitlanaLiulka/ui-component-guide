@@ -12,8 +12,8 @@ export default {
         totalDataCount: 60,
         countForPage: 5,
         currentPage: 7,
-        prevBtnText: false,
-        nextBtnText: false,
+        prevBtnText: null,
+        nextBtnText: null,
     },
     argTypes: {
         totalDataCount: {
