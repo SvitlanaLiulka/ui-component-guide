@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dropdown, MenuItem } from 'react-bootstrap';
+import { Dropdown } from '@paysera/react-common';
 
 import TwoLineCell from '../Components/TwoLineCell';
 import ExpanderButton from '../Components/ExpanderButton';
@@ -54,15 +54,15 @@ export const getFieldColumns = [
             <Dropdown id="dropdown-custom-menu" className="pull-right">
                 <CustomToggle bsRole="toggle" />
                 <Dropdown.Menu className="dropdown-menu-right">
-                    <MenuItem eventKey="1">
+                    <Dropdown.Item eventKey="1">
                         <button className="btn btn-link" type="button">Repeat</button>
-                    </MenuItem>
-                    <MenuItem eventKey="2">
+                    </Dropdown.Item>
+                    <Dropdown.Item eventKey="2">
                         <button className="btn btn-link" type="button">Export to PDF</button>
-                    </MenuItem>
-                    <MenuItem eventKey="3">
+                    </Dropdown.Item>
+                    <Dropdown.Item eventKey="3">
                         <button className="btn btn-link" type="button">Print</button>
-                    </MenuItem>
+                    </Dropdown.Item>
                 </Dropdown.Menu>
             </Dropdown>
         ),
@@ -71,15 +71,15 @@ export const getFieldColumns = [
             <Dropdown id="dropdown-custom-menu">
                 <CustomToggle bsRole="toggle" />
                 <Dropdown.Menu className="dropdown-menu-right">
-                    <MenuItem eventKey="1">
+                    <Dropdown.Item eventKey="1">
                         <button className="btn btn-link" type="button">Repeat</button>
-                    </MenuItem>
-                    <MenuItem eventKey="2">
+                    </Dropdown.Item>
+                    <Dropdown.Item eventKey="2">
                         <button className="btn btn-link" type="button">Export to PDF</button>
-                    </MenuItem>
-                    <MenuItem eventKey="3">
+                    </Dropdown.Item>
+                    <Dropdown.Item eventKey="3">
                         <button className="btn btn-link" type="button">Print</button>
-                    </MenuItem>
+                    </Dropdown.Item>
                 </Dropdown.Menu>
             </Dropdown>
         ),
