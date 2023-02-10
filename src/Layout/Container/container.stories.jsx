@@ -1,6 +1,5 @@
 import React from 'react';
-import { Col, Row } from '@paysera/react-common';
-import { Container as ContainerComponent } from 'react-bootstrap';
+import { Col, Row, Container as ContainerComponent } from '@paysera/react-common';
 import { getComponentPropType } from '../../utils/getComponentPropType';
 import { FLUID_TYPE } from '../const';
 
