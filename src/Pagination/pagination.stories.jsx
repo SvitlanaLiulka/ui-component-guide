@@ -12,6 +12,8 @@ export default {
         totalDataCount: 60,
         countForPage: 5,
         currentPage: 7,
+        prevBtnText: false,
+        nextBtnText: false,
     },
     argTypes: {
         totalDataCount: {
@@ -28,6 +30,14 @@ export default {
         },
         onPageChange: {
             ...getComponentPropType('function'),
+        },
+        prevBtnText: {
+            control: 'text',
+            ...getComponentPropType('string'),
+        },
+        nextBtnText: {
+            control: 'text',
+            ...getComponentPropType('string'),
         },
     },
 };
