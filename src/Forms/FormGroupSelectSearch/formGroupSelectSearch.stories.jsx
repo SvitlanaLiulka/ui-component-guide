@@ -3,6 +3,8 @@ import { FormGroupSelectSearch as FormGroupSelectSearchComponent } from '@payser
 import { getComponentPropType } from '../../utils/getComponentPropType';
 import withReduxForm from '../../utils/withReduxForm';
 
+FormGroupSelectSearchComponent.displayName = 'FromGroupSelectSearch';
+
 export default {
     title: 'Forms/FormGroupSelectSearch',
     component: FormGroupSelectSearchComponent,
