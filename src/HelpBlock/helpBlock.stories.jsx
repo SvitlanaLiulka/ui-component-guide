@@ -4,6 +4,7 @@ import { getComponentPropType } from '../utils/getComponentPropType';
 import withReduxForm from '../utils/withReduxForm';
 
 HelpBlockComponent.displayName = 'HelpBlock';
+FormGroup.displayName = 'FormGroup';
 
 export default {
     title: 'Help Block/HelpBlock',
