@@ -4,6 +4,16 @@ import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 
 export const Template = (args) => <i {...args} />;
 
+[Bootstrap Icons](https://icons.getbootstrap.com/) and [Fontawesome Icons](https://fontawesome.com/v6/docs) is used.
+
+# Bootstrap Icons
+
+Install the `bootstrap-icons` package using `npm i bootstrap-icons`.
+
+Then add this `import 'bootstrap-icons/font/bootstrap-icons.css'` to the root file of project.
+
+Visit [docs](https://icons.getbootstrap.com/#install) for detailed information and [icon list](https://icons.getbootstrap.com/#icons) for detailed documentation.
+
 ## Icon Props
 
 Icons can be used using `i` tag. See the examples.
@@ -14,24 +24,24 @@ Icons can be used using `i` tag. See the examples.
 | style     | `CSSProperties` |         | list of css properties as object                                                                               |
 
 <Canvas withSource withToolbar>
-    <Story
-        name="Example (without styling)"
-        args={{
-            className: "bi-alarm",
-        }}
-    >
-        {Template.bind({})}
-    </Story>
-    <Story
-        name="Example (with styling)"
-        args={{
-            className: "bi-alarm",
-            style: {
-                fontSize: "2rem",
-                color: "cornflowerblue",
-            },
-        }}
-    >
-        {Template.bind({})}
-    </Story>    
+  <Story
+    name="Bootstrap Icon Example (without styling)"
+    args={{
+      className: "bi-alarm",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Bootstrap Icon Example (with styling)"
+    args={{
+      className: "bi-alarm",
+      style: {
+        fontSize: "2rem",
+        color: "cornflowerblue",
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
 </Canvas>
