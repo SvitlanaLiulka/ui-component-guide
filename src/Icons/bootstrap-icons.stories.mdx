@@ -1,10 +1,8 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 
-<Meta title="Icon" component={<i />} />
+<Meta title="Bootstrap Icons" component={<i />} />
 
 export const Template = (args) => <i {...args} />;
-
-[Bootstrap Icons](https://icons.getbootstrap.com/) and [Fontawesome Icons](https://fontawesome.com/v6/docs) is used.
 
 # Bootstrap Icons
 
@@ -23,9 +21,11 @@ Icons can be used using `i` tag. See the examples.
 | className | text            |         | accepts the class of expected icon. For full list of icons visit [docs](https://icons.getbootstrap.com/#icons) |
 | style     | `CSSProperties` |         | list of css properties as object                                                                               |
 
+
+## Usage
 <Canvas withSource withToolbar>
   <Story
-    name="Bootstrap Icon Example (without styling)"
+    name="Example (without styling)"
     args={{
       className: "bi-alarm",
     }}
@@ -33,7 +33,7 @@ Icons can be used using `i` tag. See the examples.
     {Template.bind({})}
   </Story>
   <Story
-    name="Bootstrap Icon Example (with styling)"
+    name="Example (with styling)"
     args={{
       className: "bi-alarm",
       style: {
