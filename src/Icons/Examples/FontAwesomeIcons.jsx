@@ -11,6 +11,16 @@ const Icons = () => (
         <FontAwesomeIcon icon={faHouse} />
         <FontAwesomeIcon icon={faHouse} size='2x' />
         <FontAwesomeIcon icon={faHouse} size='3x' />
+        <FontAwesomeIcon icon={faHouse} size='4x' />
+        <FontAwesomeIcon
+            icon={faHouse}
+            style={{
+                color: 'cornflowerblue',
+                border: '1px solid black',
+                padding: 5,
+                borderRadius: 4,
+            }}
+        />
         <FontAwesomeIcon icon={faHourglassEmpty} size='2xs' />
         <FontAwesomeIcon icon={faHourglassEmpty} size='xs' />
         <FontAwesomeIcon icon={faHourglassEmpty} size='sm' />
