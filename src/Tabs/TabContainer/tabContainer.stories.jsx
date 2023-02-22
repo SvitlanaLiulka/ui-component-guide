@@ -1,15 +1,15 @@
 import React from 'react';
 import {
-    TabContent, TabPane, TabContainer as TabContainerComponent, Nav, NavItem,
+    Tab, Nav, Row, Col,
 } from '@paysera/react-common';
 import { getComponentPropType } from '../../utils/getComponentPropType';
-import { TABS_ID_OPTIONS } from '../const/const';
+import { ANIMATION_TYPE, TABS_ID_OPTIONS } from '../const/const';
 
 export default {
     title: 'Tabs Components/TabContainer',
-    component: TabContainerComponent,
+    component: Tab.Container,
     args: {
-        defaultActiveKey: 1,
+        defaultActiveKey: 'first',
     },
     argTypes: {
         id: {
@@ -17,7 +17,7 @@ export default {
         },
         defaultActiveKey: {
             control: 'number',
-            ...getComponentPropType('number', 1),
+            ...getComponentPropType('number'),
         },
         activeKey: {
             control: 'number',
@@ -29,32 +29,46 @@ export default {
         generateChildId: {
             ...getComponentPropType('function'),
         },
+        mountOnEnter: {
+            control: 'boolean',
+            ...getComponentPropType('boolean'),
+        },
+        unmountOnExit: {
+            control: 'boolean',
+            ...getComponentPropType('boolean'),
+        },
+        transition: {
+            control: ANIMATION_TYPE,
+            ...getComponentPropType(ANIMATION_TYPE),
+        },
     },
 };
 
 const Template = args => (
-    <TabContainerComponent {...args}>
-        <>
-            <Nav bsStyle="tabs" stacked>
-                <NavItem eventKey={1}>Tab 1</NavItem>
-                <NavItem eventKey={2}>Tab 2</NavItem>
-                <NavItem eventKey={3}>Tab 3</NavItem>
-            </Nav>
-            <TabContent>
-                <TabPane eventKey={1}>
-                    Tab 1 content
-                </TabPane>
-                <TabPane eventKey={2}>
-                    Tab 2 content
-                </TabPane>
-                <TabPane eventKey={3}>
-                    Tab 3 content
-                </TabPane>
-            </TabContent>
-        </>
-    </TabContainerComponent>
+    <Tab.Container {...args}>
+        <Row>
+            <Col sm={3}>
+                <Nav variant="pills">
+                    <Nav.Item>
+                        <Nav.Link eventKey="first">Tab 1</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link eventKey="second">Tab 2</Nav.Link>
+                    </Nav.Item>
+                </Nav>
+            </Col>
+            <Col sm={9}>
+                <Tab.Content>
+                    <Tab.Pane eventKey="first">
+                        first
+                    </Tab.Pane>
+                    <Tab.Pane eventKey="second">
+                        second
+                    </Tab.Pane>
+                </Tab.Content>
+            </Col>
+        </Row>
+    </Tab.Container>
 );
 
 export const TabContainer = Template.bind({});
-
-TabContainer.displayName = 'TabContainer';
