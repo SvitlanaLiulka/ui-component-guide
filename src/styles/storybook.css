@@ -62,3 +62,7 @@ section.info-section {
 .card-img-overlay {
     color: #fff !important;
 }
+
+.fade {
+    opacity: unset;
+}

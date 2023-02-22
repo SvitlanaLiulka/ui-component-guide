@@ -2,58 +2,89 @@ import React from 'react';
 import { Alert as AlertComponent } from '@paysera/react-common';
 import { ALERT_VARIANT } from './const';
 import { getComponentPropType } from '../utils/getComponentPropType';
-import { CHILDREN_TYPE } from '../const';
 
 export default {
     title: 'Alert',
     component: AlertComponent,
     args: {
-        children: 'some text',
+        variant: 'primary',
     },
     argTypes: {
-        onDismiss: {
-            control: { disabled: true },
-            ...getComponentPropType('function'),
-        },
-        children: {
-            control: 'text',
-            ...getComponentPropType(CHILDREN_TYPE),
-        },
-        bsClass: {
-            control: 'text',
-            ...getComponentPropType('string'),
-        },
         closeLabel: {
             control: 'text',
+            ...getComponentPropType('string', 'Close alert'),
+        },
+        closeVariant: {
+            control: 'text',
+            ...getComponentPropType('white'),
+        },
+        dismissible: {
+            control: 'boolean',
+            ...getComponentPropType('boolean'),
+        },
+        onClose: {
+            ...getComponentPropType('function'),
+        },
+        show: {
+            control: 'boolean',
+            ...getComponentPropType('boolean', true),
+        },
+        transition: {
+            control: { type: 'select' },
+            options: 'boolean | elementType',
+            ...getComponentPropType('elementType', 'Fade'),
+        },
+        bsPrefix: {
+            control: 'text',
             ...getComponentPropType('string'),
         },
-        bsStyle: {
+        variant: {
             options: ALERT_VARIANT,
             control: { type: 'radio' },
-            ...getComponentPropType(ALERT_VARIANT, 'success'),
+            ...getComponentPropType(ALERT_VARIANT, 'primary'),
         },
     },
 };
 
-const Template = args => <AlertComponent {...args} />;
+const Template = args => <AlertComponent {...args}>This is a alert — check it out!</AlertComponent>;
 
+export const Primary = Template.bind({});
+export const Secondary = Template.bind({});
 export const Success = Template.bind({});
 export const Danger = Template.bind({});
 export const Warning = Template.bind({});
 export const Info = Template.bind({});
+export const Dark = Template.bind({});
+export const Light = Template.bind({});
+
+Primary.args = {
+    variant: 'primary',
+};
+
+Secondary.args = {
+    variant: 'secondary',
+};
 
 Success.args = {
-    bsStyle: 'success',
+    variant: 'success',
 };
 
 Danger.args = {
-    bsStyle: 'danger',
+    variant: 'danger',
 };
 
 Warning.args = {
-    bsStyle: 'warning',
+    variant: 'warning',
 };
 
 Info.args = {
-    bsStyle: 'info',
+    variant: 'info',
+};
+
+Dark.args = {
+    variant: 'dark',
+};
+
+Light.args = {
+    variant: 'light',
 };
