@@ -16,18 +16,39 @@ section.info-section {
     background: #f4f4f4;
 }
 
-.grid-cell-data {
-    padding: 0 15px;
+[class*="col-sm"] {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    background-color: #bbeffd;
+    border: 1px solid #61dafb
 }
 
-.col-xs-12, .col-xs-6 .col-md-8, .col-md-4, .col-md-6, .col-xs-offset-6 {
-    background-color: rgba(86,61,124,.15);
-    border: 1px solid rgba(86,61,124,.2);
-    padding: 10px;
+[class*="col-xs"] {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    background-color: #bbeffd;
+    border: 1px solid #61dafb
 }
 
-.row {
-    margin-bottom: 15px;
+[class*="col-lg"] {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    background-color: #bbeffd;
+    border: 1px solid #61dafb
+}
+
+[class*="col-md"] {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    background-color: #bbeffd;
+    border: 1px solid #61dafb
+}
+
+.vstack >div, .hstack >div {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    background-color: #bbeffd !important;
+    border: 1px solid #61dafb !important;
 }
 
 .list-group-item, .list-group-item:first-child, .list-group-item:last-child {
