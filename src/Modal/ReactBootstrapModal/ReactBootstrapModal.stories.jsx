@@ -50,14 +50,14 @@ const Template = args => (
                     Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
                     Praesent commodo cursus magna, vel scelerisque nisl consectetur
                 </p>
-                <Button style={{ marginRight: '5px' }} bsStyle="primary">confirm</Button>
-                <Button onClick={hideModal} bsStyle="primary">close</Button>
+                <Button style={{ marginRight: '5px' }} variant="primary">Confirm</Button>
+                <Button onClick={hideModal} variant="secondary">Close</Button>
             </>
 )}
         Footer={() => <div>Modal footer</div>}
     >
         {({ showModal }) => (
-            <Button bsStyle="primary" onClick={() => showModal()}>
+            <Button variant="primary" onClick={() => showModal()}>
                 Click to open modal
             </Button>
         )}
