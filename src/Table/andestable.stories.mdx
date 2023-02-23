@@ -13,25 +13,35 @@ import WithFilters from './examples/WithFilters';
 <Meta
     title="Tables/AndesTable"
     component={AndesTable}
+    parameters={{
+        viewMode: 'docs',
+        previewTabs: {
+            canvas: {
+                hidden: true,
+            },
+        }
+    }}
 />
 
 export const Template = (args) => <AndesTable {...args } />
 
 <Story
-name="AndesTable"
-args={{
-    sortable: false,
-    resizable: false,
-    showPagination: false,
-    filterable: false,
-    horizontallyScrollable: false,
-    loading: false,
-    data,
-    columns: getFieldColumns,
-}}
+    name="AndesTable"
+    args={{
+        sortable: false,
+        resizable: false,
+        showPagination: false,
+        filterable: false,
+        horizontallyScrollable: false,
+        loading: false,
+        data,
+        columns: getFieldColumns,
+    }}
 >
-  {Template.bind({})}
+    {Template.bind({})}
 </Story>
+
+<ArgsTable story="AndesTable" />
 
 ## Table Porps
 

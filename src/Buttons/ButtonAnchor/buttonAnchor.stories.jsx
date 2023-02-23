@@ -17,6 +17,8 @@ export default {
     },
 };
 
+ButtonAnchorComponent.displayName = 'ButtonAnchor';
+
 const Template = args => (<ButtonAnchorComponent {...args} />);
 
 export const ButtonAnchor = Template.bind({});

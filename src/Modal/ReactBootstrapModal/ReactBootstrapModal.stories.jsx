@@ -39,6 +39,8 @@ export default {
     },
 };
 
+ReactBootstrapModalComponent.displayName = 'ReactBootstrapModal';
+
 const Template = args => (
     <ReactBootstrapModalComponent
         {...args}

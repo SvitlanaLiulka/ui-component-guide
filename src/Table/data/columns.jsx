@@ -52,15 +52,15 @@ export const getFieldColumns = [
         id: 'actions',
         Header: () => (
             <Dropdown id="dropdown-custom-menu" className="pull-right">
-                <CustomToggle bsRole="toggle" />
+                <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components" />
                 <Dropdown.Menu className="dropdown-menu-right">
-                    <Dropdown.Item eventKey="1">
+                    <Dropdown.Item href="1">
                         <button className="btn btn-link" type="button">Repeat</button>
                     </Dropdown.Item>
-                    <Dropdown.Item eventKey="2">
+                    <Dropdown.Item href="2">
                         <button className="btn btn-link" type="button">Export to PDF</button>
                     </Dropdown.Item>
-                    <Dropdown.Item eventKey="3">
+                    <Dropdown.Item href="3">
                         <button className="btn btn-link" type="button">Print</button>
                     </Dropdown.Item>
                 </Dropdown.Menu>
@@ -69,15 +69,15 @@ export const getFieldColumns = [
         headerClassName: 'andes-table-mobile-header pull-right',
         Cell: () => (
             <Dropdown id="dropdown-custom-menu">
-                <CustomToggle bsRole="toggle" />
+                <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components" />
                 <Dropdown.Menu className="dropdown-menu-right">
-                    <Dropdown.Item eventKey="1">
+                    <Dropdown.Item href="1">
                         <button className="btn btn-link" type="button">Repeat</button>
                     </Dropdown.Item>
-                    <Dropdown.Item eventKey="2">
+                    <Dropdown.Item href="2">
                         <button className="btn btn-link" type="button">Export to PDF</button>
                     </Dropdown.Item>
-                    <Dropdown.Item eventKey="3">
+                    <Dropdown.Item href="3">
                         <button className="btn btn-link" type="button">Print</button>
                     </Dropdown.Item>
                 </Dropdown.Menu>
