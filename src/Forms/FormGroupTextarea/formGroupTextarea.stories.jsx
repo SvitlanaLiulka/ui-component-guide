@@ -3,6 +3,8 @@ import { FormGroupTextarea as FormGroupTextareaComponent } from '@paysera/react-
 import { getComponentPropType } from '../../utils/getComponentPropType';
 import withReduxForm from '../../utils/withReduxForm';
 
+FormGroupTextareaComponent.displayName = 'FromGroupTextArea';
+
 export default {
     title: 'Forms/FormGroupTextarea',
     component: FormGroupTextareaComponent,

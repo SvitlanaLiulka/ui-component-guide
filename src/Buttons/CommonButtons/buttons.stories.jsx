@@ -8,12 +8,17 @@ export default {
     title: 'Buttons/Common Buttons',
     component: Button,
     args: {
+        variant: 'primary',
         active: false,
-        block: false,
         children: 'Label',
         disabled: false,
     },
     argTypes: {
+        variant: {
+            options: BTN_STYLE_OPTIONS,
+            ...getComponentPropType(BTN_STYLE_OPTIONS, 'primary'),
+            control: { type: 'radio' },
+        },
         onClick: {
             control: { disabled: true },
             ...getComponentPropType('function'),
@@ -22,16 +27,11 @@ export default {
             control: 'text',
             ...getComponentPropType(CHILDREN_TYPE),
         },
-        bsClass: {
+        bsPrefix: {
             control: 'text',
-            ...getComponentPropType('string'),
+            ...getComponentPropType('string', 'btn'),
         },
-        bsStyle: {
-            options: BTN_STYLE_OPTIONS,
-            ...getComponentPropType(BTN_STYLE_OPTIONS, 'default'),
-            control: { type: 'radio' },
-        },
-        bsSize: {
+        size: {
             options: BTN_SIZE_OPTIONS,
             ...getComponentPropType(BTN_SIZE_OPTIONS),
             control: { type: 'radio' },
@@ -49,43 +49,57 @@ export default {
             control: 'boolean',
             ...getComponentPropType('boolean', false),
         },
-        block: {
-            control: 'boolean',
-            ...getComponentPropType('boolean', false),
+        href: {
+            control: 'text',
+            ...getComponentPropType('string'),
         },
     },
 };
 
 const Template = args => (<Button {...args} />);
 
-export const Default = Template.bind({});
 export const Primary = Template.bind({});
+export const Secondary = Template.bind({});
 export const Success = Template.bind({});
 export const Info = Template.bind({});
 export const Warning = Template.bind({});
 export const Danger = Template.bind({});
 export const Link = Template.bind({});
+export const Dark = Template.bind({});
+export const Light = Template.bind({});
 
 Primary.args = {
-    bsStyle: 'primary',
+    variant: 'primary',
+};
+
+Secondary.args = {
+    variant: 'secondary',
 };
 
 Success.args = {
-    bsStyle: 'success',
+    variant: 'success',
 };
 
 Info.args = {
-    bsStyle: 'info',
+    variant: 'info',
 };
 
 Warning.args = {
-    bsStyle: 'warning',
+    variant: 'warning',
 };
 
 Danger.args = {
-    bsStyle: 'danger',
+    variant: 'danger',
 };
 
 Link.args = {
-    bsStyle: 'link',
+    variant: 'link',
+};
+
+Dark.args = {
+    variant: 'dark',
+};
+
+Light.args = {
+    variant: 'light',
 };

@@ -3,6 +3,8 @@ import { FormGroupSelect as FormGroupSelectComponent } from '@paysera/react-comm
 import { getComponentPropType } from '../../utils/getComponentPropType';
 import withReduxForm from '../../utils/withReduxForm';
 
+FormGroupSelectComponent.displayName = 'FormGroupSelect';
+
 export default {
     title: 'Forms/FormGroupSelect',
     component: FormGroupSelectComponent,

@@ -1,16 +1,5 @@
-import React from 'react';
-import { AndesTable } from '@paysera/react-common';
-
 import data from './data/data';
 import { getFieldColumns } from './data/columns';
-
-export default {
-    title: 'Tables/AndesTable',
-    component: AndesTable,
-    includeStories: [],
-};
-
-export const AndesDataTable = args => <AndesTable {...args} />;
 
 export const argTypes = {
     sortable: {

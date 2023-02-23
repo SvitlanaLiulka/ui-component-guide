@@ -1,17 +1,19 @@
 import React from 'react';
-import { Popover as PopoverComponent } from '@paysera/react-common';
+import { Popover as PopoverComponent, OverlayTrigger, Button } from '@paysera/react-common';
 import { getComponentPropType } from '../utils/getComponentPropType';
-import { CHILDREN_TYPE, PLACEMENT_TYPE } from './const';
+import { ANIMATION_TYPE, PLACEMENT_TYPE } from './const';
 
 export default {
     title: 'Popover Components/Popover',
     component: PopoverComponent,
-    args: {
-        positionLeft: 200,
-        positionTop: 50,
-        title: 'Popover right',
-    },
     argTypes: {
+        arrowProps: {
+            ...getComponentPropType('{ ref: ReactRef, style: Object }'),
+        },
+        body: {
+            control: 'boolean',
+            ...getComponentPropType('boolean', true),
+        },
         id: {
             control: 'text',
             ...getComponentPropType('string'),
@@ -21,37 +23,39 @@ export default {
             options: PLACEMENT_TYPE,
             ...getComponentPropType(PLACEMENT_TYPE),
         },
-        positionTop: {
-            control: 'number',
-            ...getComponentPropType(CHILDREN_TYPE),
+        popper: {
+            ...getComponentPropType('object'),
         },
-        positionLeft: {
-            control: 'number',
-            ...getComponentPropType(CHILDREN_TYPE),
+        show: {
+            control: 'boolean',
+            ...getComponentPropType('boolean'),
         },
-        arrowOffsetTop: {
-            control: 'number',
-            ...getComponentPropType(CHILDREN_TYPE),
+        transition: {
+            ...getComponentPropType(ANIMATION_TYPE),
         },
-        arrowOffsetLeft: {
-            control: 'number',
-            ...getComponentPropType(CHILDREN_TYPE),
-        },
-        bsClass: {
+        bsPrefix: {
             control: 'text',
             ...getComponentPropType('string'),
-        },
-        title: {
-            control: CHILDREN_TYPE,
-            ...getComponentPropType(CHILDREN_TYPE),
         },
     },
 };
 
-export const Popover = args => (
-    <div style={{ height: 50 }}>
-        <PopoverComponent {...args}>
-            And here is some amazing content
-        </PopoverComponent>
-    </div>
+const Template = args => (
+    <>
+        <OverlayTrigger
+            trigger="click"
+            overlay={(
+                <PopoverComponent {...args}>
+                    <PopoverComponent.Header as="h3">Popover</PopoverComponent.Header>
+                    <PopoverComponent.Body>
+                        And here is some amazing content. Its very engaging
+                    </PopoverComponent.Body>
+                </PopoverComponent>
+              )}
+        >
+            <Button variant="success">Click me to see</Button>
+        </OverlayTrigger>
+    </>
 );
+
+export const Popover = Template.bind({});

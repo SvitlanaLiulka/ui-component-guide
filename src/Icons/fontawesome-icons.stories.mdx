@@ -1,0 +1,78 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import { Source } from "@storybook/addon-docs";
+
+import FontawesomeIconsExample from "./Examples/FontAwesomeIcons.jsx";
+
+<Meta title="Fontawesome Icons" component={FontawesomeIcon} />
+
+export const Template = (args) => <FontawesomeIcon {...args} />;
+
+# Fontawesome Icons
+
+Install required packages from [this doc](https://fontawesome.com/v6/docs/web/use-with/react/).
+
+List of required packages:
+
+- `@fortawesome/fontawesome-svg-core`
+- `@fortawesome/free-solid-svg-icons` ([Icon List](https://fontawesome.com/search?o=r&m=free&s=solid))
+- `@fortawesome/free-regular-svg-icons` ([Icon List](https://fontawesome.com/search?o=r&m=free&s=regular))
+- `@fortawesome/free-brands-svg-icons` ([Icon List](https://fontawesome.com/search?o=r&f=brands))
+- `@fortawesome/react-fontawesome@latest`
+
+## Icon Props
+
+<b>NB:</b> In the icon lists all the examples are in <b>hyphen-case</b> (Example: <b>
+  fa-house
+</b>
+), to use in javascript it can be written in <b>faHouse</b>.
+
+| Name  | Type            | default | Description                                                                                                                                                                                                                                                                                                                                                                                     |
+| ----- | --------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| icon  | `ReactNode`     |         | Get list of all icons from [this link](https://fontawesome.com/docs/apis/javascript/import-icons#package-names) and use lower camel case for naming icons, see [this link](https://fontawesome.com/docs/apis/javascript/import-icons#icon-names). Alternative ways to add icons, visit this [link](https://fontawesome.com/v6/docs/web/use-with/react/add-icons#alternative-ways-to-add-icons). |
+| style | `CSSProperties` |         | list of css properties as object                                                                                                                                                                                                                                                                                                                                                                |
+| size  | `string`        |         | Font Awesome supports t-shirt size scale from `2xs` to `2xl` as well as literal sizing from `1x` to `10x`.                                                                                                                                                                                                                                                                                      |
+| color | `string`        |         | Color property                                                                                                                                                                                                                                                                                                                                                                                  |
+
+See the full list of props [here](https://fontawesome.com/v6/docs/web/use-with/react/style)
+
+## Usage
+<ExampleCodeBlock code={FontawesomeIconsExample} />
+
+## Importing Icons
+```jsx
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHouse, faSpinner, faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faHourglassEmpty } from '@fortawesome/free-regular-svg-icons';
+import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
+```
+
+
+## Using icon components
+```jsx
+
+<FontAwesomeIcon icon={faHouse} />
+<FontAwesomeIcon icon={faHouse} size='2x' />
+<FontAwesomeIcon icon={faHouse} size='3x' />
+<FontAwesomeIcon icon={faHouse} size='4x' />
+<FontAwesomeIcon
+    icon={faHouse}
+    style={{
+        color: 'cornflowerblue',
+        border: '1px solid black',
+        padding: 5,
+        borderRadius: 4,
+    }}
+/>
+<FontAwesomeIcon icon={faHourglassEmpty} size='2xs' />
+<FontAwesomeIcon icon={faHourglassEmpty} size='xs' />
+<FontAwesomeIcon icon={faHourglassEmpty} size='sm' />
+<FontAwesomeIcon icon={faHourglassEmpty} />
+<FontAwesomeIcon icon={faHourglassEmpty} size='md' />
+<FontAwesomeIcon icon={faHourglassEmpty} size='lg' />
+<FontAwesomeIcon icon={faHourglassEmpty} size='xl' />
+<FontAwesomeIcon icon={faHourglassEmpty} size='2xl' />
+<FontAwesomeIcon icon={faInstagram} />
+<FontAwesomeIcon icon={faFacebook} />
+<FontAwesomeIcon icon={faSpinner} spin size='lg' />
+<FontAwesomeIcon icon={faHeart} beat size='lg' color='red' />
+```
