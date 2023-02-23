@@ -26,7 +26,7 @@ module.exports = function rewriteExampleCodeBlock(source) {
       .replace(/\<ExampleCodeBlock code={([A-Za-z0-9]+)} \/\>/g, function replacer(match, p1, p2) {
         return `<Canvas><Story name="${storyNameFromExport(
           p1
-        )}" parameters={{ docs: { source: {code: ${p1}.__RAW__, language: 'jsx' }}}}><${p1} /></Story></Canvas>`;
+        )}" parameters={{  viewMode: 'docs', previewTabs: { canvas: { hidden: true } }, docs: { source: {code: ${p1}.__RAW__, language: 'jsx' }}}}><${p1} /></Story></Canvas>`;
       })
       .replace(/\<PropsTable of=/g, '<ArgsTable of=')
   );

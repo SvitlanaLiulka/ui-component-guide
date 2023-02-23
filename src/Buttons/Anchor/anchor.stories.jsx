@@ -30,6 +30,8 @@ export default {
     },
 };
 
+AnchorComponent.displayName = 'Anchor';
+
 const Template = args => (<AnchorComponent {...args} />);
 
 export const Anchor = Template.bind({});
