@@ -1,5 +1,5 @@
 import React from 'react';
-import { Stack as StackComponent } from 'react-bootstrap';
+import { Stack as StackComponent } from '@paysera/react-common';
 import { getComponentPropType } from '../../utils/getComponentPropType';
 import { DIRECTION_TYPE } from '../const';
 

@@ -3,6 +3,8 @@ import { FormGroupTab as FormGroupTabComponent } from '@paysera/react-common';
 import { getComponentPropType } from '../../utils/getComponentPropType';
 import withReduxForm from '../../utils/withReduxForm';
 
+FormGroupTabComponent.displayName = 'FormGroupTab';
+
 export default {
     title: 'Forms/FormGroupTab',
     component: FormGroupTabComponent,

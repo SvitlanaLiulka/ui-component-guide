@@ -3,6 +3,9 @@ import { Form as FormComponent, FormGroup, FormGroupRadio } from '@paysera/react
 import { getComponentPropType } from '../../utils/getComponentPropType';
 import withReduxForm from '../../utils/withReduxForm';
 
+FormGroup.displayName = 'FormGroup';
+FormGroupRadio.displayName = 'FromGroupRadio';
+
 export default {
     title: 'Forms/Form',
     component: FormComponent,

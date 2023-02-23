@@ -1,44 +1,33 @@
 import React from 'react';
-import { Nav, NavItem as NavItemComponent } from '@paysera/react-common';
+import { Nav, NavItem as NavItemComponent, NavLink } from '@paysera/react-common';
 import { getComponentPropType } from '../../utils/getComponentPropType';
 
 export default {
     title: 'Navs/NavItem',
     component: NavItemComponent,
+    args: {
+        bsPrefix: 'nav-item',
+    },
     argTypes: {
-        eventKey: {
-            control: 'number',
-            ...getComponentPropType('number'),
-        },
-        active: {
-            control: 'boolean',
-            ...getComponentPropType('boolean'),
-        },
-        disabled: {
-            control: 'boolean',
-            ...getComponentPropType('boolean', false),
-        },
-        href: {
+        as: {
             control: 'text',
-            ...getComponentPropType('string', '/home'),
+            type: { name: 'string', required: false },
+            description: 'You can use a custom element type for this component.',
+            ...getComponentPropType('string', 'div'),
         },
-        role: {
+        bsPrefix: {
             control: 'text',
-            ...getComponentPropType('string'),
-        },
-        onSelect: {
-            ...getComponentPropType('function'),
-        },
-        onClick: {
-            ...getComponentPropType('function'),
+            ...getComponentPropType('string', 'nav-item'),
         },
     },
 };
 
 const Template = args => (
-    <Nav>
+    <Nav activeKey={1}>
         <NavItemComponent {...args}>
-            NavItemComponent 1 content
+            <NavLink eventKey={1}>
+                NavItemComponent 1 content
+            </NavLink>
         </NavItemComponent>
     </Nav>
 );

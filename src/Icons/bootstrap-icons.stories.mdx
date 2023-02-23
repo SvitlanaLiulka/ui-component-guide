@@ -1,0 +1,47 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+
+<Meta title="Bootstrap Icons" component={<i />} />
+
+export const Template = (args) => <i {...args} />;
+
+# Bootstrap Icons
+
+Install the `bootstrap-icons` package using `npm i bootstrap-icons`.
+
+Then add this `import 'bootstrap-icons/font/bootstrap-icons.css'` to the root file of project.
+
+Visit [docs](https://icons.getbootstrap.com/#install) for detailed information and [icon list](https://icons.getbootstrap.com/#icons) for detailed documentation.
+
+## Icon Props
+
+Icons can be used using `i` tag. See the examples.
+
+| Name      | Type            | default | Description                                                                                                    |
+| --------- | --------------- | ------- | -------------------------------------------------------------------------------------------------------------- |
+| className | text            |         | accepts the class of expected icon. For full list of icons visit [docs](https://icons.getbootstrap.com/#icons) |
+| style     | `CSSProperties` |         | list of css properties as object                                                                               |
+
+
+## Usage
+<Canvas withSource withToolbar>
+  <Story
+    name="Example (without styling)"
+    args={{
+      className: "bi-alarm",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Example (with styling)"
+    args={{
+      className: "bi-alarm",
+      style: {
+        fontSize: "2rem",
+        color: "cornflowerblue",
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>

@@ -1,9 +1,10 @@
 import React from 'react';
 import { Badge as BadgeComponent } from '@paysera/react-common';
 import { getComponentPropType } from '../utils/getComponentPropType';
+import { BADGE_VARIANT, BADGE_AS } from './const';
 
 export default {
-    title: 'Badge',
+    title: 'Badge/Badge',
     component: BadgeComponent,
     args: {
         children: 'text',
@@ -13,13 +14,28 @@ export default {
             control: 'text',
             ...getComponentPropType('string'),
         },
-        pullRight: {
-            control: 'boolean',
-            ...getComponentPropType('boolean', false),
+        as: {
+            control: { type: 'select' },
+            options: BADGE_AS,
+            ...getComponentPropType(BADGE_AS),
         },
-        bsClass: {
+        bg: {
+            options: BADGE_VARIANT,
+            control: { type: 'radio' },
+            ...getComponentPropType(BADGE_VARIANT, 'primary'),
+        },
+        pill: {
+            control: 'boolean',
+            ...getComponentPropType('boolean', 'false'),
+        },
+        text: {
+            options: BADGE_VARIANT,
+            control: { type: 'radio' },
+            ...getComponentPropType(BADGE_VARIANT),
+        },
+        bsPrefix: {
             control: 'text',
-            ...getComponentPropType('text'),
+            ...getComponentPropType('string', 'badge'),
         },
     },
 };

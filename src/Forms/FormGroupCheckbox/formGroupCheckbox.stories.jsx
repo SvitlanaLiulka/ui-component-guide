@@ -3,6 +3,8 @@ import { FormGroupCheckbox as FormGroupCheckboxComponent } from '@paysera/react-
 import { getComponentPropType } from '../../utils/getComponentPropType';
 import withReduxForm from '../../utils/withReduxForm';
 
+FormGroupCheckboxComponent.displayName = 'FormGroupCheckbox';
+
 export default {
     title: 'Forms/FormGroupCheckbox',
     component: FormGroupCheckboxComponent,

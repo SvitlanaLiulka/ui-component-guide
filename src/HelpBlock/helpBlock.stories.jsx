@@ -1,21 +1,36 @@
 import React from 'react';
-import {
-    Form, FormGroup, HelpBlock as HelpBlockComponent,
-} from '@paysera/react-common';
+import { HelpBlock as HelpBlockComponent, Form, FormGroup } from '@paysera/react-common';
+import { getComponentPropType } from '../utils/getComponentPropType';
 import withReduxForm from '../utils/withReduxForm';
 
+HelpBlockComponent.displayName = 'HelpBlock';
+FormGroup.displayName = 'FormGroup';
+
 export default {
-    title: 'HelpBlock',
-    component: Form,
+    title: 'Help Block/HelpBlock',
+    component: HelpBlockComponent,
     decorators: [
         withReduxForm,
     ],
+    args: {
+        children: 'HelpBlock',
+    },
+    argTypes: {
+        children: {
+            control: 'text',
+            ...getComponentPropType('string'),
+        },
+        className: {
+            control: 'text',
+            ...getComponentPropType('string'),
+        },
+    },
 };
 
 const Template = args => (
-    <Form {...args}>
-        <FormGroup placeholder="Test" />
-        <HelpBlockComponent>I`m helper block</HelpBlockComponent>
+    <Form>
+        <FormGroup placeholder='Test' />
+        <HelpBlockComponent {...args} />
     </Form>
 );
 

@@ -51,6 +51,11 @@ section.info-section {
     border: 1px solid #61dafb !important;
 }
 
+.fade {
+    opacity: unset;
+
+}
+
 .list-group-item, .list-group-item:first-child, .list-group-item:last-child {
     border: 1px solid rgb(0, 0, 0, 13%) !important;
 }
