@@ -9,7 +9,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.3.0",
     "@fortawesome/free-solid-svg-icons": "^6.3.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "@paysera/react-common": "git+https://gitlab.paysera.net/paysera/js-lib-react-common.git#feature/SUPPORT-61721-modernize-react-bootstrap",
+    "@paysera/react-common": "^4.0.3",
     "@storybook/addon-essentials": "^6.5.14",
     "@storybook/builder-webpack5": "^6.5.15",
     "@storybook/manager-webpack5": "^6.5.15",
@@ -20,12 +20,13 @@
     "html-webpack-plugin": "^5.5.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
-    "react-bootstrap": "^2.7.0",
     "react-dom": "^16.13.1",
     "react-redux": "5.1.1",
     "react-table": "^6.9.2",
     "redux": "3.7.2",
-    "redux-form": "^7.4.2"
+    "redux-form": "^7.4.2",
+    "sass": "^1.58.3",
+    "sass-loader": "^13.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",

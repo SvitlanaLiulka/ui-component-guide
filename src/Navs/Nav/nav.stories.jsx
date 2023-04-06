@@ -1,7 +1,7 @@
 import React from 'react';
 import { Nav as NavComponent, NavItem, NavLink } from '@paysera/react-common';
 import { getComponentPropType } from '../../utils/getComponentPropType';
-import { NAV_STYLE_OPTIONS , NAV_ALIGN_OPTIONS } from './const';
+import { NAV_STYLE_OPTIONS, NAV_ALIGN_OPTIONS } from './const';
 
 export default {
     title: 'Navs/Nav',
@@ -29,12 +29,6 @@ export default {
             ...getComponentPropType(NAV_ALIGN_OPTIONS, NAV_ALIGN_OPTIONS[0]),
             control: {
                 type: 'radio',
-                labels: {
-                    [NAV_ALIGN_OPTIONS[0]]: 'None (default)',
-                    [NAV_ALIGN_OPTIONS[1]]: 'Center',
-                    [NAV_ALIGN_OPTIONS[2]]: 'Right',
-                    [NAV_ALIGN_OPTIONS[3]]: 'Verical',
-                },
             },
         },
         justify: {

@@ -7,7 +7,14 @@ export default {
     title: 'Tables/Table',
     component: TableComponent,
     args: {
-
+        striped: false,
+        bordered: false,
+        borderless: false,
+        hover: false,
+        responsive: false,
+        bsPrefix: 'table',
+        size: 'sm',
+        variant: 'light',
     },
     argTypes: {
         striped: {

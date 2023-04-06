@@ -57,6 +57,19 @@ module.exports = {
                 use: ['webpack-modernizr-loader'],
             },
             {
+                test: /\.s[ac]ss$/i,
+                use: [
+                    require.resolve('style-loader'),
+                    {
+                        loader: require.resolve('css-loader'),
+                        options: {
+                            importLoaders: 1,
+                        },
+                    },
+                    require.resolve('sass-loader')
+                ],
+            },
+            {
                 test: /\.less$/,
                 use: [
                     require.resolve('style-loader'),
